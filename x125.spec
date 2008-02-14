@@ -3,6 +3,7 @@ Name:		x125
 Version:	0.2.3
 Release:	%mkrel 3
 Group:		System/Printing
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 URL:		http://sourceforge.net/projects/x125-linux/
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/x125-linux/x125-drv-0.2.3.tar.gz
