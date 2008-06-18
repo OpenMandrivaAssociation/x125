@@ -1,7 +1,7 @@
 Summary:	A printer driver for the Lexmark X125 All-in-one printer/scanner/fax
 Name:		x125
 Version:	0.2.3
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Printing
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
