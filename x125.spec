@@ -1,15 +1,16 @@
 Summary:	A printer driver for the Lexmark X125 All-in-one printer/scanner/fax
 Name:		x125
 Version:	0.2.3
-Release:	%mkrel 5
+Release:	%mkrel 6
 Group:		System/Printing
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
 URL:		http://sourceforge.net/projects/x125-linux/
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/x125-linux/x125-drv-0.2.3.tar.gz
 Source1:	http://heanet.dl.sourceforge.net/sourceforge/x125-linux/x125-drv-network-0.2.0.tar.gz
+Patch0:		x125-0.2.3-LDFLAGS.diff
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A printer driver for the Lexmark X125 All-in-one printer/scanner/fax.
@@ -17,15 +18,14 @@ A printer driver for the Lexmark X125 All-in-one printer/scanner/fax.
 %prep
 
 %setup -q -c -T -a0 -a1
+%patch0 -p1 -b .LDFLAGS
 
 %build
-perl -p -i -e "s/gcc/gcc %{optflags}/" drv_x125*/src/Makefile
-
 cd drv_x125/src
-%make
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 cd ../..
 cd drv_x125_network/src
-%make
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 cd ../..
 
 %install
