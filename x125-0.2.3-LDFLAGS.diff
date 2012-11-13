@@ -1,0 +1,28 @@
+diff -Naur x125-0.2.3/drv_x125/src/Makefile x125-0.2.3.oden/drv_x125/src/Makefile
+--- x125-0.2.3/drv_x125/src/Makefile	2004-02-05 03:10:05.000000000 +0100
++++ x125-0.2.3.oden/drv_x125/src/Makefile	2008-12-29 16:32:29.000000000 +0100
+@@ -1,5 +1,9 @@
++GCC=gcc
++CFLAGS=-Wall
++LDFLAGS=
++
+ x125_cmyk: x125_cmyk.c
+-	gcc -o x125_cmyk x125_cmyk.c
++	$(GCC) $(CFLAGS) $(LDFLAGS) -o x125_cmyk x125_cmyk.c
+ 
+ testprn: x125_cmyk
+ 	gs -dSAFER -r600x600 -sPAPERSIZE=letter -q -dNOPAUSE -dBATCH \
+diff -Naur x125-0.2.3/drv_x125_network/src/Makefile x125-0.2.3.oden/drv_x125_network/src/Makefile
+--- x125-0.2.3/drv_x125_network/src/Makefile	2004-01-19 16:53:15.000000000 +0100
++++ x125-0.2.3.oden/drv_x125_network/src/Makefile	2008-12-29 16:33:20.000000000 +0100
+@@ -1,5 +1,9 @@
++GCC=gcc
++CFLAGS=-Wall
++LDFLAGS=
++
+ x125_network: x125_network.c
+-	gcc -o x125_network x125_network.c
++	$(GCC) $(CFLAGS) $(LDFLAGS) -o x125_network x125_network.c
+ 
+ test: x125_network
+ 	touch test.out
