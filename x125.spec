@@ -4,7 +4,7 @@ Version:	0.2.3
 Release:	22
 Group:		System/Printing
 License:	GPL
-URL:		http://sourceforge.net/projects/x125-linux/
+URL:		https://sourceforge.net/projects/x125-linux/
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/x125-linux/x125-drv-0.2.3.tar.gz
 Source1:	http://heanet.dl.sourceforge.net/sourceforge/x125-linux/x125-drv-network-0.2.0.tar.gz
 Patch0:		x125-0.2.3-LDFLAGS.diff
